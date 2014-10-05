@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>ToDo List</title>
+
+	<script src='js/jquery-1.11.1.min.js'></script>
+	<script src='js/jquery-1.10.2.js'></script>
+	<script src='js/jquery-ui-1.11.1.js'></script>
+	<link rel="stylesheet" href="js/jquery-ui.css">
+
+	<script>
+		$(function() {
+			$( "#accordion" ).accordion();
+		});
+  </script>
+
+</head>
+<body>
+
+	<div id="accordion">
+		<h3>Stuff</h3>
+		<ul>
+			<li>
+			   <button id="button1">button</button>
+			   <span class="display" style="background-color:lightblue">enum</span>
+			   <input type="text" class="edit" style="display:none; background-color:yellow"/>
+			   -
+			   <span class="display1" style="background-color:lightyellow">erum</span>
+			   <input type="text" class="edit1" style="background-color:blue; display:none"/>
+			</li>
+			<li>
+			   <span class="display">ingress</span>
+			   <input type="text" class="edit" style="background-color: lightyellow; display: none"/>
+			</li>
+   		</ul>
+	  <h3>Section 1</h3>
+	  <div>
+	    <p>
+	    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+	    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+	    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+	    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+	    </p>
+	  </div> 
+	<script>
+		$(".display").click(function(){
+			$(this).hide().siblings(".edit").show().val($(this).text()).focus();
+		});
+
+		$(".edit").focusout(function(){
+			$(this).hide().siblings(".display").show().text($(this).val());
+		});
+
+		$(".display1").click(function(){
+			$(this).hide().siblings(".edit1").show().val($(this).text()).focus();
+		});
+
+		$(".edit1").focusout(function(){
+			$(this).hide().siblings(".display1").show().text($(this).val());
+		});
+
+		$("#button1").click( function(){
+			alert( 'hello I am a button!' );
+		});
+
+	</script>
+</body>
+</html>
